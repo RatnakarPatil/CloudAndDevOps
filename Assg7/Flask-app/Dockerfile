@@ -1,5 +1,6 @@
-FROM python:3.9.1
-ADD . /app
+FROM python:3-alpine3.15
 WORKDIR /app
+COPY . /app
 RUN pip install -r requirements.txt
-CMD ["python", "app.py"]
+EXPOSE 3000
+CMD python ./app.py
